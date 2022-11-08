@@ -76,7 +76,7 @@ const Header = () => {
                       color: "black",
                       fontSize: "20px",
                     }}
-                    to="/myReviews"
+                    to="/reviews"
                   >
                     My Reviews
                   </Link>

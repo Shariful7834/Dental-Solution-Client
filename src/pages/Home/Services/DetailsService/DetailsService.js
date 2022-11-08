@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../../context/AuthProvider";
 import AllServiceReview from "./AllServiceReview";
 import ServiceDetails from "./ServiceDetails";
@@ -8,22 +8,58 @@ const DetailsService = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const detailService = useLoaderData();
+  console.log(detailService);
   const { _id, title, img, price, description } = detailService;
 
   const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = user?.displayName || "unregistered";
-    const email = user?.email || "unregistered";
+    const name = user?.displayName || form.name.value;
+    const email = user?.email || form.email.value;
     const message = form.message.value;
     console.log(email, message);
+
+    const reviews = {
+      service: _id,
+      name,
+      title,
+      email,
+      photoUrl: user?.photoURL,
+      message,
+    };
+
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reviews),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          form.reset();
+          alert("Review posted Successfully");
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
-  const addReview = {};
+  // get all review data from database
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?service=${_id}`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((error) => console.error(error));
+  }, [_id]);
 
   return (
     <div className="container ">
       <ServiceDetails detailService={detailService}></ServiceDetails>
+
       {user?.uid ? (
         <>
           <div className="mb-5 border p-5 mt-3 bg-info">
@@ -68,10 +104,11 @@ const DetailsService = () => {
           </div>
         </>
       ) : (
-        <h2>Please Log in to post a review</h2>
+        <h2>Please login to add a review</h2>
       )}
-
+      <h1>all reviews {reviews.length}</h1>
       <AllServiceReview></AllServiceReview>
+
       {user?.displayName}
       {/* <Image
         roundedCircle

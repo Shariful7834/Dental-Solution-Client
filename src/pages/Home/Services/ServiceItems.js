@@ -48,7 +48,7 @@ const ServiceItems = ({ service }) => {
               ? description.slice(0, 100) + " ..."
               : description}
           </Card.Text>
-          <Link to={`/inventoryCheckout/${_id}`}>
+          <Link to={`/detailsService/${_id}`}>
             <Button variant="primary">View Details</Button>
           </Link>
         </Card.Body>

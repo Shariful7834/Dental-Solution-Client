@@ -26,67 +26,68 @@ const Header = () => {
   //     .then((error) => console.error(error));
   // };
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      bg="light"
-      variant="light"
-      sticky="top"
-    >
-      <Container>
-        <Navbar.Brand className="d-flex align-items-center">
-          {/* <Image
+    <div>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+        sticky="top"
+      >
+        <Container>
+          <Navbar.Brand className="d-flex align-items-center">
+            {/* <Image
             roundedCircle
             style={{ width: "50px", height: "50px" }}
             src={logo}
             alt=""
             className="d-inline-block align-top"
           /> */}
-          <Link style={{ textDecoration: "none" }} to="/">
-            <h2 style={{ color: "tomato" }} className=" fs-1 py-2 ms-2">
-              Tech <span style={{ color: "#21b573" }}>Skills</span> EDU
-            </h2>
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto ">
-            <Link
-              style={{
-                textDecoration: "none",
-                marginRight: "20px",
-                color: "black",
-                fontSize: "20px",
-              }}
-              to="/courses"
-            >
-              Courses
+            <Link style={{ textDecoration: "none" }} to="/">
+              <h2 style={{ color: "tomato" }} className=" fs-1 py-2 ms-2">
+                Dental Solution
+              </h2>
             </Link>
-            <Link
-              style={{
-                textDecoration: "none",
-                marginRight: "20px",
-                color: "black",
-                fontSize: "20px",
-              }}
-              to="/blogs"
-            >
-              <span>Blogs</span>
-            </Link>
-            <Link
-              style={{
-                textDecoration: "none",
-                marginRight: "50px",
-                color: "black",
-                fontSize: "18px",
-                marginTop: "3px",
-              }}
-              to="/faq"
-            >
-              <span>FAQ</span>
-            </Link>
-          </Nav>
-          {/* <Nav>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto ">
+              <Link
+                style={{
+                  textDecoration: "none",
+                  marginRight: "20px",
+                  color: "black",
+                  fontSize: "20px",
+                }}
+                to="/courses"
+              >
+                Courses
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  marginRight: "20px",
+                  color: "black",
+                  fontSize: "20px",
+                }}
+                to="/blogs"
+              >
+                <span>Blogs</span>
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  marginRight: "50px",
+                  color: "black",
+                  fontSize: "18px",
+                  marginTop: "3px",
+                }}
+                to="/faq"
+              >
+                <span>FAQ</span>
+              </Link>
+            </Nav>
+            {/* <Nav>
             {user?.uid ? (
               <Button
                 className="fs-6 me-3 text-white mt-3 "
@@ -170,16 +171,17 @@ const Header = () => {
               </Nav.Link>
             </div>
           </Nav> */}
-          <Nav.Link>
-            <BsCircleHalf
-              style={{ width: "23px", height: "23px" }}
-              className="ms-3 text-dark"
-            ></BsCircleHalf>{" "}
-            <span className="fs-6 text-dark">Theme</span>
-          </Nav.Link>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            <Nav.Link>
+              <BsCircleHalf
+                style={{ width: "23px", height: "23px" }}
+                className="ms-3 text-dark"
+              ></BsCircleHalf>{" "}
+              <span className="fs-6 text-dark">Theme</span>
+            </Nav.Link>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
   );
 };
 

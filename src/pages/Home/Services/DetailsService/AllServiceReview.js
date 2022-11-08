@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Card, Image } from "react-bootstrap";
+import { AuthContext } from "../../../../context/AuthProvider";
 
 const AllServiceReview = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div>
-      <h1>All Service Review</h1>
+      <Card>
+        <Card.Body>
+          <div>
+            {user?.uid && <Image src={user.photoURL} variant="primary"></Image>}
+          </div>
+        </Card.Body>
+      </Card>
     </div>
   );
 };

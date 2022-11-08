@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
+import { FaStar } from "react-icons/fa";
 const ServiceDetails = ({ detailService }) => {
   const { _id, title, img, price, description, rating } = detailService;
 
@@ -16,20 +17,27 @@ const ServiceDetails = ({ detailService }) => {
           </Col>
 
           <Col lg="6">
-            <Card.Body>
-              <Card.Title className="text-start">
-                Service Cost ${price}
+            <Card.Body className="text-start">
+              <Card.Title className="text-start mt-5">
+                <h3>Service Cost ${price}</h3>
               </Card.Title>
-              <h3>rating {rating}</h3>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <div className="d-flex align-items-center"></div>
+              <Card.Text>{description}</Card.Text>
+              <Button className="fw-bold px-3 py-2" variant="outline-warning">
+                Appointment
+              </Button>
             </Card.Body>
           </Col>
         </Row>
-        <Card.Footer className="text-muted">2 days ago</Card.Footer>
+        <Card.Footer className="text-muted">
+          <h3 style={{ color: "gold" }}>
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+          </h3>
+        </Card.Footer>
       </Card>
     </div>
   );

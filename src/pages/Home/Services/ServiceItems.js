@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./ServicesItems.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 const ServiceItems = ({ service }) => {
-  const { title, img, price, description, _id } = service;
+  const { title, img, price, description, _id, rating } = service;
   <PhotoProvider bannerVisible={false} />;
   return (
     <div className="mt-5">
@@ -48,9 +48,15 @@ const ServiceItems = ({ service }) => {
               ? description.slice(0, 100) + " ..."
               : description}
           </Card.Text>
-          <Link to={`/detailsService/${_id}`}>
-            <Button variant="primary">View Details</Button>
-          </Link>
+          <div className="d-flex justify-content-between mt-4">
+            <h5>Cost : ${price}</h5>
+            <span>Rating : {rating}</span>
+            <div>
+              <Link to={`/detailsService/${_id}`}>
+                <Button variant="primary">View Details</Button>
+              </Link>
+            </div>
+          </div>
         </Card.Body>
       </Card>
     </div>

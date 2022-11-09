@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ServiceItems from "./ServiceItems";
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -27,6 +28,9 @@ const Services = () => {
         {services.map((service) => (
           <ServiceItems key={service._id} service={service}></ServiceItems>
         ))}
+        <Link className="mx-auto w-25" to="allServices">
+          <Button>See All</Button>
+        </Link>
       </Row>
     </div>
   );

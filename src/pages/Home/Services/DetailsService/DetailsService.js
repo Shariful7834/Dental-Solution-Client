@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../../context/AuthProvider";
-import AllServiceReview from "./AllServiceReview";
+import AllServiceReview from "./MyReview";
 import ServiceDetails from "./ServiceDetails";
 import { Button, Form, Image } from "react-bootstrap";
+import MyReview from "./MyReview";
+import AllReview from "../../../Shared/AllReview/AllReview";
 const DetailsService = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
@@ -23,7 +25,7 @@ const DetailsService = () => {
       service: _id,
       name,
       title,
-      email,
+      email: user?.email,
       photoUrl: user?.photoURL,
       message,
     };
@@ -107,7 +109,13 @@ const DetailsService = () => {
         <h2>Please login to add a review</h2>
       )}
       <h1>all reviews {reviews.length}</h1>
-      <AllServiceReview></AllServiceReview>
+     <div>
+      {
+        reviews.map(review=><AllReview key={review} review={review}></AllReview>)
+      }
+     </div>
+      
+      {/* <MyReview></MyReview> */}
 
       {user?.displayName}
       {/* <Image

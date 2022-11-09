@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import DetailsService from "../pages/Home/Services/DetailsService/DetailsService";
-import Reviews from "../pages/Reviews/Reviews";
+import MyReview from "../pages/Home/Services/DetailsService/MyReview";
 import Login from "../pages/Shared/Login/Login";
 import Register from "../pages/Shared/Register/Register";
 
@@ -32,8 +32,8 @@ export const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/reviews",
-        element: <Reviews></Reviews>,
+        path: "/myreview",
+        element: <MyReview></MyReview>,
       },
     ],
   },

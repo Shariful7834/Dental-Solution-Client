@@ -3,10 +3,12 @@ import { Button, Card, Col, Image, Row } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { AuthContext } from "../../../../context/AuthProvider";
+import { Link } from "react-router-dom";
 
-const Reviews = ({ myrev }) => {
+const Reviews = ({ myrev, deleteHandler }) => {
   const { user } = useContext(AuthContext);
-  const { img, title, message } = myrev;
+  const { img, title, message, _id } = myrev;
+
   return (
     <div>
       {img}
@@ -46,14 +48,18 @@ const Reviews = ({ myrev }) => {
           </p>
         </Col>
         <Col lg="1">
-          <Button>
-            <FaEdit></FaEdit>
-          </Button>
+          <Link to={`/update/${myrev._id}`}>
+            <Button>
+              <FaEdit></FaEdit>
+            </Button>
+          </Link>
         </Col>
         <Col lg="1">
-          <Button variant="danger">
-            <RiDeleteBin6Fill></RiDeleteBin6Fill>
-          </Button>
+          <Link>
+            <Button onClick={() => deleteHandler(_id)} variant="danger">
+              <RiDeleteBin6Fill></RiDeleteBin6Fill>
+            </Button>
+          </Link>
         </Col>
       </Row>
     </div>

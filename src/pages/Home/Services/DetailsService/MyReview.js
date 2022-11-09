@@ -37,6 +37,7 @@ const MyReview = () => {
   return (
     <div className="container mt-5 ">
       <h2>You have {myReviews.length} reviews</h2>
+
       <div style={{ height: "100vh" }}>
         <Row className=" py-3 bg-light mt-4 rounded d-flex align-items-center justify-content-between">
           <Col lg="1">
@@ -66,6 +67,9 @@ const MyReview = () => {
               deleteHandler={deleteHandler}
             ></Reviews>
           ))}
+          <div className="text-center mt-5">
+            {myReviews.length < 1 && <h2>No data found</h2>}
+          </div>
         </Row>
       </div>
     </div>

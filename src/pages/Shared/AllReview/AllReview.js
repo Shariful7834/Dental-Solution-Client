@@ -6,7 +6,8 @@ import { AuthContext } from "../../../context/AuthProvider";
 
 const AllReview = ({ review }) => {
   const { user } = useContext(AuthContext);
-  const { img, title, photoURL, message } = review;
+  const { img, title, name, photoURL, message } = review;
+  console.log(review);
   return (
     <div>
       <div>
@@ -17,14 +18,14 @@ const AllReview = ({ review }) => {
             {user?.uid && (
               <Image
                 roundedCircle
-                className="py-3"
-                src={user.photoURL}
+                className="py-3 h-50 w-50"
+                src={user?.photoURL}
                 variant="primary"
               ></Image>
             )}
           </Col>
           <Col lg="2">
-            <h5>{user.displayName}</h5>
+            <h5>{name}</h5>
           </Col>
           <Col lg="2">
             <h4>{title}</h4>

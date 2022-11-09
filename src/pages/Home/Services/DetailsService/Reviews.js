@@ -16,7 +16,7 @@ const Reviews = ({ myrev }) => {
           {user?.uid && (
             <Image
               roundedCircle
-              className="py-3"
+              className="py-3 h-100 w-100"
               src={user.photoURL}
               variant="primary"
             ></Image>

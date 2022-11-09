@@ -35,9 +35,9 @@ const MyReview = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 ">
       <h2>You have {myReviews.length} reviews</h2>
-      <div>
+      <div style={{ height: "100vh" }}>
         <Row className=" py-3 bg-light mt-4 rounded d-flex align-items-center justify-content-between">
           <Col lg="1">
             <h4>Image</h4>

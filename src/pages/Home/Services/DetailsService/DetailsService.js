@@ -59,7 +59,7 @@ const DetailsService = () => {
   }, [_id]);
 
   return (
-    <div className="container ">
+    <div className="container">
       <ServiceDetails detailService={detailService}></ServiceDetails>
 
       {user?.uid ? (
@@ -106,15 +106,15 @@ const DetailsService = () => {
           </div>
         </>
       ) : (
-        <h2>Please login to add a review</h2>
+        <h2 className="mt-3">Please login to add a review</h2>
       )}
-      <h1>all reviews {reviews.length}</h1>
-     <div>
-      {
-        reviews.map(review=><AllReview key={review} review={review}></AllReview>)
-      }
-     </div>
-      
+      <h3 className="my-3">Patient reviews </h3>
+      <div className="mt-5" style={{ height: "100vh" }}>
+        {reviews.map((review) => (
+          <AllReview key={review} review={review}></AllReview>
+        ))}
+      </div>
+
       {/* <MyReview></MyReview> */}
 
       {user?.displayName}

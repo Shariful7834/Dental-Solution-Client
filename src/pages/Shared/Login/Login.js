@@ -24,15 +24,29 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        form.reset();
-        toast.success("Successfully logind");
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+        console.log(currentUser);
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            //local storage is the easiest but not the best place to store token
+            localStorage.setItem("token", data.token);
+          });
+
+        // navigate(from, { replace: true });
       })
-      .catch((error) => {
-        console.error(error);
-        setError(error.message);
-      });
+      .catch((error) => console.error(error));
   };
+
   const handleGoogle = () => {
     googleProvider()
       .then((result) => {

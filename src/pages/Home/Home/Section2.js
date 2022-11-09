@@ -9,7 +9,7 @@ import { Row } from "react-bootstrap";
 const Section2 = () => {
   return (
     <div className="my-5">
-      <h2 className="text-center fs-1 mt-5 pt-5">Find Me</h2>
+      <h2 className="text-center fs-1 mt-5 pt-5">Contact Me</h2>
 
       <div className="mt-5 bg-secondary w-100 h-100 ">
         <Row className="container mx-auto">

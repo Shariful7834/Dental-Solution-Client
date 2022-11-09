@@ -28,8 +28,10 @@ const Services = () => {
         {services.map((service) => (
           <ServiceItems key={service._id} service={service}></ServiceItems>
         ))}
-        <Link className="mx-auto w-25" to="allServices">
-          <Button>See All</Button>
+      </Row>
+      <Row className="text-center fw-bold">
+        <Link to="/allServices">
+          <Button className="mx-auto w-25 fw-bold fs-4">See All</Button>
         </Link>
       </Row>
     </div>

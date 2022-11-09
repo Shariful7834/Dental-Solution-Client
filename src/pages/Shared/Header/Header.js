@@ -57,12 +57,12 @@ const Header = () => {
                   textDecoration: "none",
                   marginRight: "50px",
                   color: "black",
-                  fontSize: "18px",
+                  fontSize: "22px",
                   marginTop: "3px",
                 }}
-                to="/faq"
+                to="/blogs"
               >
-                <span>FAQ</span>
+                <span>Blogs</span>
               </Link>
             </Nav>
             <Nav>
@@ -88,7 +88,7 @@ const Header = () => {
                       color: "black",
                       fontSize: "20px",
                     }}
-                    to="/addServices"
+                    to="/allServices"
                   >
                     <span>Add Service</span>
                   </Link>

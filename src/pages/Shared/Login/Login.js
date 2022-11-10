@@ -42,7 +42,7 @@ const Login = () => {
             localStorage.setItem("token", data.token);
           });
 
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };

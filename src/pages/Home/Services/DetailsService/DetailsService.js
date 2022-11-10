@@ -109,7 +109,7 @@ const DetailsService = () => {
         <h2 className="mt-3">Please login to add a review</h2>
       )}
       <h3 className="my-3">Patient reviews </h3>
-      <div className="mt-5" style={{ height: "100vh" }}>
+      <div className="mt-5">
         {reviews.map((review) => (
           <AllReview key={review} review={review}></AllReview>
         ))}

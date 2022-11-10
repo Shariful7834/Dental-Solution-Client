@@ -30,7 +30,7 @@ const DetailsService = () => {
       message,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://dental-solution-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,7 @@ const DetailsService = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?service=${_id}`)
+    fetch(`https://dental-solution-server.vercel.app/reviews?service=${_id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((error) => console.error(error));

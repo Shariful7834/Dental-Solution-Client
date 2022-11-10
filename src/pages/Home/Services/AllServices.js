@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../../components/UseTitle";
 import ServiceItems from "./ServiceItems";
 const AllServices = () => {
-  // const allServices = useLoaderData();
-  const [allServices, SetAllServices] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/allservices")
-      .then((res) => res.json())
-      .then((data) => SetAllServices(data))
-      .catch((error) => console.error(error));
-  }, [allServices]);
-
+  const allServices = useLoaderData();
+  useTitle("add services");
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -30,7 +24,7 @@ const AllServices = () => {
       description,
     };
 
-    fetch("http://localhost:5000/allservices", {
+    fetch("https://dental-solution-server.vercel.app/allservices", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -110,7 +104,7 @@ const AllServices = () => {
               />
             </Form.Group>
             <Button type="submit" variant="success">
-              Add Review
+              Add Service
             </Button>{" "}
           </Form>
         </Col>

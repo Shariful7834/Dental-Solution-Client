@@ -5,15 +5,13 @@ import Reviews from "./Reviews";
 import { toast } from "react-hot-toast";
 
 const MyReview = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
-      headers: {
-        authorization: `bearer ${localStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      `https://dental-solution-server.vercel.app/myreviews?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setMyReviews(data))
       .catch((error) => console.error(error));
@@ -22,7 +20,7 @@ const MyReview = () => {
   const deleteHandler = (_id) => {
     const proceed = window.confirm("Do you want to detete this review?");
     if (proceed) {
-      fetch(`http://localhost:5000/myreviews/${_id}`, {
+      fetch(`https://dental-solution-server.vercel.app/myreviews/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -41,7 +39,6 @@ const MyReview = () => {
   return (
     <div className="container mt-5 ">
       <h2>You have {myReviews.length} reviews</h2>
-
       <div style={{ height: "100vh" }}>
         <Row className=" py-3 bg-light mt-4 rounded d-flex align-items-center justify-content-between">
           <Col lg="1">
@@ -71,8 +68,10 @@ const MyReview = () => {
               deleteHandler={deleteHandler}
             ></Reviews>
           ))}
-          <div className="text-center mt-5">
-            {myReviews.length < 1 && <h2>No data found</h2>}
+          <div>
+            <div className="text-center">
+              {myReviews.length < 1 && <h2>No data found</h2>}
+            </div>
           </div>
         </Row>
       </div>

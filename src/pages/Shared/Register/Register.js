@@ -6,12 +6,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider";
+import useTitle from "../../../components/UseTitle";
 const Register = () => {
   const { createUser, googleProvider, updateUserProfile } =
     useContext(AuthContext);
   const [error, setError] = useState();
   let navigate = useNavigate();
   let location = useLocation();
+  useTitle("Register");
   const from = location.state?.from?.pathname || "/";
   const handleSignUp = (event) => {
     event.preventDefault();

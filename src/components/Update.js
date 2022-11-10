@@ -26,13 +26,16 @@ const Update = () => {
       message,
     };
 
-    fetch(`http://localhost:5000/myreviews/${storedMyreview._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(reviews),
-    })
+    fetch(
+      `https://dental-solution-server.vercel.app/myreviews/${storedMyreview._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(reviews),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -47,7 +50,7 @@ const Update = () => {
       <h1>plese update your Review {storedMyreview.name}</h1>
 
       <div className="mb-5 border p-5 mt-3 bg-info">
-        <Form onSubmit={handleUpdateReview}>
+        <Form onSubmit={() => handleUpdateReview(_id)}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Your Name</Form.Label>
             <Form.Control

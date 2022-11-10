@@ -3,8 +3,10 @@ import { Accordion } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
+import useTitle from "../../../components/UseTitle";
 
 const Blogs = () => {
+  useTitle("Blogs");
   return (
     <div className="my-5 container">
       <h2 className="my-5 text-center">Blogs</h2>

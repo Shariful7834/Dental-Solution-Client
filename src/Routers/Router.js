@@ -23,17 +23,26 @@ export const router = createBrowserRouter([
       {
         path: "/detailsService/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://dental-solution-server.vercel.app/services/${params.id}`
+          ),
         element: <DetailsService></DetailsService>,
       },
       {
         path: "/allServices",
-        loader: () => fetch("http://localhost:5000/allservices"),
+        loader: () =>
+          fetch("https://dental-solution-server.vercel.app/allservices"),
         element: (
           <PrivateRouter>
             <AllServices></AllServices>,
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/seeAllServices",
+        loader: () =>
+          fetch("https://dental-solution-server.vercel.app/allservices"),
+        element: <AllServices></AllServices>,
       },
       {
         path: "/login",
@@ -54,7 +63,9 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myreviews/${params.id}`),
+          fetch(
+            `https://dental-solution-server.vercel.app/myreviews/${params.id}`
+          ),
         element: <Update></Update>,
       },
       {

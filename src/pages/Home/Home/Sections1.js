@@ -7,10 +7,10 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const Sections1 = () => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 container">
       <h2 className="text-center fs-1 mt-5 pt-5">Find Me</h2>
       <div>
-        <Row className="mt-5 d-flex justify-content-center align-items-center gap-3">
+        <Row className="mt-5 d-flex justify-content-center align-items-center gap-2">
           <Col className="p-5" lg="3" style={{ backgroundColor: "tomato" }}>
             <div className="d-flex justify-content-around align-items-center">
               <div>
@@ -24,7 +24,7 @@ const Sections1 = () => {
               </div>
             </div>{" "}
           </Col>
-          <Col className="p-5 bg-info" lg="3">
+          <Col className="p-5 bg-info" lg="4">
             <div className="d-flex justify-content-around align-items-center">
               <div>
                 <ImLocation2
@@ -37,7 +37,7 @@ const Sections1 = () => {
               </div>
             </div>{" "}
           </Col>
-          <Col className="p-5 bg-warning" lg="3">
+          <Col className="p-5 bg-warning" lg="4">
             <div className="d-flex justify-content-around align-items-center">
               <div>
                 <FiPhoneCall

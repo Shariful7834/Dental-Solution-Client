@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Dental Solution
+# Live Site Link : https://dental-solution-2d625.firebaseapp.com/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot 2022-11-10 024322](https://user-images.githubusercontent.com/37573074/200979971-344f2826-5242-4f45-83bb-a796ccf79a9c.png)
 
 ## Website Features
 * Dynamic Website

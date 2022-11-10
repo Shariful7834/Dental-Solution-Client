@@ -50,7 +50,7 @@ const Update = () => {
       <h1>plese update your Review {storedMyreview.name}</h1>
 
       <div className="mb-5 border p-5 mt-3 bg-info">
-        <Form onSubmit={() => handleUpdateReview(_id)}>
+        <Form onSubmit={handleUpdateReview}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Your Name</Form.Label>
             <Form.Control

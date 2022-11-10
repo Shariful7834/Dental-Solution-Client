@@ -2,7 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Website Features
+* Dynamic Website
+* Single page Application (Using REACT)
+* Responsive for All devices
+* User Authentication
+* User login by social accounts
+* User Can resigter an account by using valid email
+* User can update review
+* User can add review and add services
 
 In the project directory, you can run:
 

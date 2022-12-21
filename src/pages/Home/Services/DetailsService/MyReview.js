@@ -3,10 +3,12 @@ import { Button, Card, Image, Row, Col } from "react-bootstrap";
 import { AuthContext } from "../../../../context/AuthProvider";
 import Reviews from "./Reviews";
 import { toast } from "react-hot-toast";
+import useTitle from "../../../../components/UseTitle";
 
 const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
+  useTitle("My Review");
 
   useEffect(() => {
     fetch(
